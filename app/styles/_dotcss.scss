@@ -1,0 +1,164 @@
+// Colors
+$grey: #1D1A16;
+$black: #000;
+$white: #FFF;
+
+// Canvas
+$width: 2 * 500px;
+$height: 2 * 225px;
+
+// dot
+$dot-size: 2 * 150px;
+$dot-left: 2 * 30px;
+$dot-top: 2 * 20px;
+$dot-font-size: 2 * 50px;
+
+// CSS
+$css-font-size: 2 * 140px;
+
+// background circles
+$circle-size: 2 * 8px;
+$circle-gutter: 2 * 3px;
+$circle-spacing: $circle-size + $circle-gutter;
+$circle-columns: round($width / ($circle-size + $circle-gutter));
+$circle-lines: round($height / ($circle-size + $circle-gutter));
+
+$circles: ();
+$circle-offset-left: -$dot-size / 2 - $dot-left + $circle-size / 2 + $circle-gutter / 2 + 6px;
+$circle-offset-top: -$dot-size / 2 - $dot-top + $circle-size / 2 + $circle-gutter / 2 + 6px;
+$circle-offset-size: -($dot-size - $circle-size) / 2;
+@for $y from 0 to $circle-lines {
+  @for $x from 0 to $circle-columns {
+    $left: ($circle-offset-left + ($x * $circle-spacing));
+    $top: ($circle-offset-top + ($y * $circle-spacing));
+    $circles: append($circles, ($left) ($top) 0px ($circle-offset-size) $black, comma);
+  }
+}
+
+// Game of life
+$gol-offset-left: $circle-offset-left + (18 * $circle-spacing);
+$gol-offset-top: $circle-offset-top + (13 * $circle-spacing);
+
+$gol1:
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 1 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 1 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow
+      ;
+$gol-offset-left: $gol-offset-left + (5 * $circle-spacing);
+$gol2:
+        ($gol-offset-left + 1 * $circle-spacing) ($gol-offset-top + 1 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 1 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow
+      ;
+$gol-offset-left: $gol-offset-left + (5 * $circle-spacing);
+$gol3:
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 1 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 1 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow
+      ;
+$gol-offset-left: $gol-offset-left + (5 * $circle-spacing);
+$gol4:
+        ($gol-offset-left + 1 * $circle-spacing) ($gol-offset-top + 1 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 3 * $circle-spacing) ($gol-offset-top + 2 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 1 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow,
+        ($gol-offset-left + 2 * $circle-spacing) ($gol-offset-top + 3 * $circle-spacing) 0px ($circle-offset-size) $yellow
+      ;
+
+
+.dotcss-background {
+  width: $width;
+  height: $height;
+  background-color: $grey;
+  border-radius: 5px;
+}
+
+.dotcss-main-circle {
+  position: relative;
+  &:before {
+    content:"";
+    background: $yellow;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: 50%;
+    position: absolute;
+    left: $dot-left;
+    top: $dot-top;
+  }
+}
+
+.dotcss-background-circle-simple {
+  overflow: hidden;
+  &:before {
+    box-shadow: -193px -173px 0px -142px #FF4136,
+                700px -100px 0px 100px #00449E,
+                300px 75px 0px -100px #19A974;
+  }
+}
+
+.dotcss-background-circles {
+  &:before {
+    box-shadow: $circles;
+  }
+}
+
+.dotcss-gol {
+  &:before {
+    box-shadow: $gol1, $gol2, $gol3, $gol4, $circles;
+  }
+}
+
+.dotcss-text-css {
+  &:before {
+    content: "CSS";
+    font-family: Museo;
+    font-size: $css-font-size;
+    line-height: $dot-size;
+    color: transparent;
+    text-shadow: ($dot-size + 15px) 0px 0px $white;
+  }
+  &.visible:before {
+    color: rgba(0,255,255,.4);
+  }
+}
+
+.dotcss-text-dotcss {
+  overflow: hidden;
+  &:before {
+    font-family: Museo;
+    font-size: $css-font-size;
+    line-height: $dot-size;
+
+    content: "dot\A CSS";
+    white-space: pre;
+    text-align: center;
+    $offset-left: $dot-size + 15px;
+    $offset-top: -$dot-size;
+    color: transparent;
+    text-shadow: ($offset-left) ($offset-top) 0px $white;
+  }
+  &.visible:before {
+    color: rgba(0,255,255,.4);
+  }
+  &:first-line {
+    font-family: Arial;
+    font-size: $dot-font-size;
+    line-height: $dot-size;
+    color: black;
+  }
+}
+
+
+.dotcss {
+  @extend .dotcss-background;
+  @extend .dotcss-main-circle;
+  @extend .dotcss-background-circles;
+  @extend .dotcss-gol;
+  @extend .dotcss-text-dotcss;
+}

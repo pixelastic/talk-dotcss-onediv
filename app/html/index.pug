@@ -1,0 +1,180 @@
+include ./partials/config.pug
+include ./partials/mixins.pug
+doctype html
+html(lang="en")
+  head
+    title=talk_title
+    meta(name="description" content=talk_description)
+    meta(name="author" content=talk_author)
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    link(rel='stylesheet', type='text/css', href='./main.css')
+    link(rel='shortcut icon', href='./favicon.ico')
+    <!--[if lt IE 9]>
+      script(src='./js/html5shiv.js')
+    <![endif]-->
+  body
+    .reveal
+      .slides.near-white
+
+        section
+          .fcn.h4
+            .fa.fc
+              .dotcss
+
+        section
+          .fcn.h4
+            .fa.fc
+              pre.bg-near-black.pa2.f4
+                code.language-html
+                 |&lt;div class="dotcss"&gt;&lt;/div&gt;
+
+        // Background
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background
+            .fn.fc.h4
+              pre.bg-near-black.pa2
+                code.language-css
+                  |width: 1000px;
+                  |height: 450px;
+                  |background-color: #1D1A16;
+
+        // Main circle
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle
+            .fn.fc.h4.mt2
+              .bg-near-black.pa2.hack
+                div &:before {
+                .frn
+                  .fa.w-50.ml3
+                    pre
+                      code.language-scss
+                        | content:"";
+                        | height: 300px;
+                        | width: 300px;
+                        | border-radius: 50%;
+                  .fa.w-50.ml3
+                    pre
+                      code.language-scss
+                        | background: #F9DF1C;
+                        | position: absolute;
+                        | left: 60px;
+                        | top: 40px;
+                div }
+
+        // Background circle simple example
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle.dotcss-background-circle-simple
+            .fn.fc.h4.f6
+              pre.bg-near-black.pa2
+                code.language-scss
+                  |&:before {
+                  |   box-shadow: -193px -173px 0px -142px red,
+                  |               700px -100px 0px -100px blue,
+                  |               300px 75px 0px -100px green;
+                  |}
+
+        // Background circles
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles
+            .fn.fc.h4.f7
+              pre.bg-near-black.pa1
+                code.language-scss
+                  |$circles: ();
+                  |@for $y from 0 to 20 {
+                  |  @for $x from 0 to 45 {
+                  |    $left: (-193px + ($x * 22px));
+                  |    $top: (-173px + ($y * 22px));
+                  |    $circles: append($circles, ($left) ($top) 0px (-142px) #000000, comma);
+                  |  }
+                  |}
+                  |box-shadow: $circles;
+
+        // Game of life
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol
+            .fn.fc.h4.f6
+              pre.bg-near-black.pa1
+                code.language-scss
+                  |box-shadow: 247px 135px 0px -142px #F9DF1C,
+                  |             269px 157px 0px -142px #F9DF1C,
+                  |             […],
+                  |             599px 157px 0px -142px #F9DF1C,
+                  |             555px 179px 0px -142px #F9DF1C,
+                  |             577px 179px 0px -142px #F9DF1C;
+
+        // Text (CSS)
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-css.visible
+            .fn.fc.h4.f6.mt2
+              pre.bg-near-black.pa2
+                code.language-scss
+                  |&:before {
+                  |  content: "CSS";
+                  |  color: transparent;
+                  |  text-shadow: 315px 0px 0px white;
+                  |  font-size: 280px;
+                  |}
+
+        // Text (dot)
+        section
+          .fcn
+            .fn.fc.pa1.h4
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-dotcss.visible
+            .fn.fc.h4
+              .bg-near-black.pa2.hack.f6.mt3
+                .frn
+                  .fa.ml3
+                    pre
+                      code.language-scss
+                        |&:before {
+                        |  content: "dot\A CSS";
+                        |  white-space: pre;
+                        |  color: transparent;
+                        |  text-shadow: 
+                        |    315px -300px 0px white;
+                        |}
+                  .fa.ml3
+                    pre
+                      code.language-scss
+                        |&:first-line {
+                        |  color: black;
+                        |  text-shadow: none;
+                        |  font-family: Arial;
+                        |  font-size: 100px;
+                        |  line-height: 300px;
+                        |}
+
+        section
+          .fcn
+            .fa.fc.pa1.h4
+              .dotcss
+            .fa.h4.fcn.mt3
+              .fa.gold.b.fc.f2 Thank you
+              a.fa.link.white.f3.fc(href='https://github.com/pixelastic/dotcss-onediv') github.com/pixelastic/dotcss-onediv
+              .fa.frn.fc.f2
+                .fa.tc @pixelastic
+                .fa.tc.lh-0
+                  img.h2(src='./img/algolia.png', alt='Algolia')
+
+
+
+
+  script(src='./js/head.min.js')
+  script(src='./js/reveal.js')
+  script(src='./app.js')
+  script require('javascripts/app').default.init()
+

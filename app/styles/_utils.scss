@@ -1,0 +1,45 @@
+// Fonts
+.museo { font-family: 'Museo'; }
+.hack { font-family: 'Hack'; }
+
+// Text shadow
+.text-shadow { text-shadow: 2px 2px 1px black; }
+
+// Flexbox
+// Row/Columns
+.frw { display: flex; flex-direction: row; flex-wrap: wrap; }
+.frn { display: flex; flex-direction: row; }
+.fcw { display: flex; flex-direction: column; flex-wrap: wrap}
+.fcn { display: flex; flex-direction: column; }
+// Auto/None
+.fa { flex:1 1 auto; min-width:0; min-height:0; }
+.fn { flex: none; }
+// Center
+.fvc { display: flex; align-items: center }
+.fhc { display: flex; justify-content: center }
+.fc { display: flex; align-items: center; justify-content: center; }
+// Margin
+.mla { margin-left: auto; }
+.mra { margin-right: auto; }
+// Grow/Shrink
+.flex-nogrow { flex-grow: 0; }
+.flex-grow { flex-grow: 1; }
+.flex-noshrink { flex-shrink: 0; }
+.flex-shrink { flex-shrink: 1; }
+
+// Font-size
+.f7 { font-size: .65rem; }
+.f8 { font-size: .5rem; }
+
+// Line-height
+.lh-0 { line-height: 0; }
+
+// Overflow
+.oh { overflow: hidden; }
+
+// Whitespace
+.prewrap { white-space: pre-wrap; }
+
+// List
+.list-inside { list-style-position: inside }
+
