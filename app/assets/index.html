@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>dotCSS logo in one div</title><meta name="description" content="dotCSS 2016"><meta name="author" content="Tim Carry - @pixelastic"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" type="text/css" href="./main.css"><link rel="shortcut icon" href="./favicon.ico"><!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides near-white"><section><div class="fcn h4"><div class="fa fc"><div class="dotcss"></div></div></div></section><section><div class="fcn h4"><div class="fa fc"><pre class="bg-near-black pa2 f4"><code class="language-html">&lt;div class="dotcss"&gt;&lt;/div&gt;</code></pre></div></div></section><!-- Background--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background"></div></div><div class="fn fc h4"><pre class="bg-near-black pa2"><code class="language-css">width: 1000px;
+<!DOCTYPE html><html lang="en"><head><title>dotCSS logo in one div</title><meta name="description" content="dotCSS 2016"><meta name="author" content="Tim Carry - @pixelastic"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" type="text/css" href="./main.css"><link rel="shortcut icon" href="./favicon.ico"><!--[if lt IE 9]><script src="./js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides near-white"><section><div class="fcn h4"><div class="fa fc"><div class="dotcss"></div></div></div></section><section><div class="fcn h4"><div class="fa fc"><pre class="bg-near-black pa2 f4"><code class="language-html">&lt;div class="dotcss"&gt;&lt;/div&gt;</code></pre></div></div></section><!-- Background--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background"></div></div><div class="fn fc h4 mt2"><pre class="bg-near-black pa2"><code class="language-css">width: 1000px;
 height: 450px;
 background-color: #1D1A16;</code></pre></div></div></section><!-- Main circle--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle"></div></div><div class="fn fc h4 mt2"><div class="bg-near-black pa2 hack"><div>&:before {</div><div class="frn"><div class="fa w-50 ml3"><pre><code class="language-scss">content:"";
 height: 300px;
@@ -6,11 +6,11 @@ width: 300px;
 border-radius: 50%;</code></pre></div><div class="fa w-50 ml3"><pre><code class="language-scss">background: #F9DF1C;
 position: absolute;
 left: 60px;
-top: 40px;</code></pre></div></div><div>}</div></div></div></div></section><!-- Background circle simple example--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circle-simple"></div></div><div class="fn fc h4 f6"><pre class="bg-near-black pa2"><code class="language-scss">&:before {
+top: 40px;</code></pre></div></div><div>}</div></div></div></div></section><!-- Background circle simple example--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circle-simple"></div></div><div class="fn fc h4 f6 mt2"><pre class="bg-near-black pa2"><code class="language-scss">&:before {
   box-shadow: -193px -173px 0px -142px red,
               700px -100px 0px -100px blue,
               300px 75px 0px -100px green;
-}</code></pre></div></div></section><!-- Background circles--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles"></div></div><div class="fn fc h4 f7"><pre class="bg-near-black pa1"><code class="language-scss">$circles: ();
+}</code></pre></div></div></section><!-- Background circles--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles"></div></div><div class="fn fc h4 f7 mt2"><pre class="bg-near-black pa1"><code class="language-scss">$circles: ();
 @for $y from 0 to 20 {
  @for $x from 0 to 45 {
    $left: (-193px + ($x * 22px));
@@ -18,7 +18,7 @@ top: 40px;</code></pre></div></div><div>}</div></div></div></div></section><!-- 
    $circles: append($circles, ($left) ($top) 0px (-142px) #000000, comma);
  }
 }
-box-shadow: $circles;</code></pre></div></div></section><!-- Game of life--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles dotcss-gol"></div></div><div class="fn fc h4 f6"><pre class="bg-near-black pa1"><code class="language-scss">box-shadow: 247px 135px 0px -142px #F9DF1C,
+box-shadow: $circles;</code></pre></div></div></section><!-- Game of life--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles dotcss-gol"></div></div><div class="fn fc h4 f6 mt2"><pre class="bg-near-black pa1"><code class="language-scss">box-shadow: 247px 135px 0px -142px #F9DF1C,
             269px 157px 0px -142px #F9DF1C,
             […],
             599px 157px 0px -142px #F9DF1C,
@@ -28,7 +28,7 @@ box-shadow: $circles;</code></pre></div></div></section><!-- Game of life--><sec
  color: transparent;
  text-shadow: 315px 0px 0px white;
  font-size: 280px;
-}</code></pre></div></div></section><!-- Text (dot)--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles dotcss-gol dotcss-text-dotcss visible"></div></div><div class="fn fc h4"><div class="bg-near-black pa2 hack f6 mt3"><div class="frn"><div class="fa ml3"><pre><code class="language-scss">&:before {
+}</code></pre></div></div></section><!-- Text (dot)--><section><div class="fcn"><div class="fn fc pa1 h4"><div class="dotcss-background dotcss-main-circle dotcss-background-circles dotcss-gol dotcss-text-dotcss visible"></div></div><div class="fn fc h4 mt2"><div class="bg-near-black pa2 hack f6 mt3"><div class="frn"><div class="fa ml3"><pre><code class="language-scss">&:before {
  content: "dot\A CSS";
  white-space: pre;
  color: transparent;
@@ -40,4 +40,4 @@ box-shadow: $circles;</code></pre></div></div></section><!-- Game of life--><sec
  font-family: Arial;
  font-size: 100px;
  line-height: 300px;
-}</code></pre></div></div></div></div></div></section><section><div class="fcn"><div class="fa fc pa1 h4"><div class="dotcss"></div></div><div class="fa h4 fcn mt3"><div class="fa gold b fc f2">Thank you</div><a class="fa link white f3 fc" href="https://github.com/pixelastic/dotcss-onediv">github.com/pixelastic/dotcss-onediv</a><div class="fa frn fc f2"><div class="fa tc">@pixelastic</div><div class="fa tc lh-0"><img class="h2" src="./img/algolia.png" alt="Algolia"></div></div></div></div></section></div></div></body><script src="./js/head.min.js"></script><script src="./js/reveal.js"></script><script src="./app.js"></script><script>require('javascripts/app').default.init()</script></html>
+}</code></pre></div></div></div></div></div></section><section><div class="fcn"><div class="fa fc pa1 h4"><div class="dotcss"></div></div><div class="fa h4 fcn mt2"><div class="fa gold b fc f2">Thank you</div><a class="fa link white f3 fc" href="https://github.com/pixelastic/dotcss-onediv">github.com/pixelastic/dotcss-onediv</a><div class="fa frn fc f2"><div class="fa tc">@pixelastic</div><div class="fa tc lh-0"><img class="h2" src="./img/algolia.png" alt="Algolia"></div></div></div></div></section></div></div></body><script src="./js/head.min.js"></script><script src="./js/reveal.js"></script><script src="./app.js"></script><script>require('javascripts/app').default.init()</script></html>

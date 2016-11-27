@@ -10,7 +10,7 @@ let Talk = {
       history: true,
       center: true,
 
-      transition: 'linear',
+      transition: 'fade',
 
       dependencies: [{
         src: 'js/classList.js',
