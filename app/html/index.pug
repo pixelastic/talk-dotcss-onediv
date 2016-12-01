@@ -19,12 +19,13 @@ html(lang="en")
       .slides.near-white
 
         section
-          .fcn.h4
-            .fa.fc
+          .fcn
+            .fa.fc.pa1
               .dotcss
+            .fa.h1
 
         section
-          .fcn.h4
+          .fcn.h-top
             .fa.fc
               pre.bg-near-black.pa2.f4
                 code.language-html
@@ -33,10 +34,10 @@ html(lang="en")
         // Background
         section
           .fcn
-            .fn.fc.pa1.h4
+            .fn.fc.h-top.pa1
               .dotcss-background
-            .fn.fc.h4.mt2
-              pre.bg-near-black.pa2
+            .fa.fc.pt2.h-bottom
+              pre.bg-near-black.pa2.f3
                 code.language-css
                   |width: 1000px;
                   |height: 450px;
@@ -45,10 +46,10 @@ html(lang="en")
         // Main circle
         section
           .fcn
-            .fn.fc.pa1.h4
+            .fn.fc.pa1.h-top
               .dotcss-background.dotcss-main-circle
-            .fn.fc.h4.mt2
-              .bg-near-black.pa2.hack
+            .fa.fc.pt2.h-bottom
+              .bg-near-black.pa2.hack.f4
                 div &:before {
                 .frn
                   .fa.w-50.ml3
@@ -70,23 +71,23 @@ html(lang="en")
         // Background circle simple example
         section
           .fcn
-            .fn.fc.pa1.h4
+            .fn.fc.pa1.h-top
               .dotcss-background.dotcss-main-circle.dotcss-background-circle-simple
-            .fn.fc.h4.f6.mt2
-              pre.bg-near-black.pa2
+            .fn.fc.h-top.f6.pt2.h-bottom
+              pre.bg-near-black.pa2.f4
                 code.language-scss
                   |&:before {
                   |   box-shadow: -193px -173px 0px -142px red,
-                  |               700px -100px 0px -100px blue,
-                  |               300px 75px 0px -100px green;
+                  |                700px -100px 0px -100px blue,
+                  |                300px   75px 0px -100px green;
                   |}
 
         // Background circles
         section
           .fcn
-            .fn.fc.pa1.h4
+            .fn.fc.pa1.h-top
               .dotcss-background.dotcss-main-circle.dotcss-background-circles
-            .fn.fc.h4.f7.mt2
+            .fn.fc.h-top.pt2.h-bottom.f6
               pre.bg-near-black.pa1
                 code.language-scss
                   |$circles: ();
@@ -102,10 +103,10 @@ html(lang="en")
         // Game of life
         section
           .fcn
-            .fn.fc.pa1.h4
+            .fn.fc.pa1.h-top
               .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol
-            .fn.fc.h4.f6.mt2
-              pre.bg-near-black.pa1
+            .fn.fc.h-top.f6.pt2.h-bottom
+              pre.bg-near-black.pa2.f4
                 code.language-scss
                   |box-shadow: 247px 135px 0px -142px #F9DF1C,
                   |             269px 157px 0px -142px #F9DF1C,
@@ -114,28 +115,42 @@ html(lang="en")
                   |             555px 179px 0px -142px #F9DF1C,
                   |             577px 179px 0px -142px #F9DF1C;
 
-        // Text (CSS)
+        // Text (easy)
         section
           .fcn
-            .fn.fc.pa1.h4
-              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-css.visible
-            .fn.fc.h4.f6.mt2
-              pre.bg-near-black.pa2
-                code.language-scss
-                  |&:before {
-                  |  content: "CSS";
-                  |  color: transparent;
-                  |  text-shadow: 315px 0px 0px white;
-                  |  font-size: 280px;
-                  |}
+            .fn.fc.pa1.h-top
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-easy
+            .fn.fc.h-top.pt2.h-bottom
+              .bg-near-black.pa2.hack.f4
+                .frn
+                  .fa.w-50.ml1
+                    pre
+                      code.language-scss
+                        | &:before {
+                        |   content:"dot";
+                        |   color: black;
+                        |   text-align: center;
+                        |   line-height: 300px;
+                        | }
+                  .fa.w-50.ml3
+                    pre
+                      code.language-scss
+                        | &:after {
+                        |   content:"CSS";
+                        |   color: white;
+                        |   position: absolute;
+                        |   top: 40px;
+                        |   left: 375px;
+                        | }
 
-        // Text (dot)
+        // Text (Hard)
         section
           .fcn
-            .fn.fc.pa1.h4
-              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-dotcss.visible
-            .fn.fc.h4.mt2
-              .bg-near-black.pa2.hack.f6.mt3
+            .fn.fc.pa1.h-top
+              // .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-hard.visible
+              .dotcss-background.dotcss-main-circle.dotcss-background-circles.dotcss-gol.dotcss-text-hard.visible
+            .fn.fc.h-top.pt2.h-bottom
+              .bg-near-black.pa2.hack.mt3.f4
                 .frn
                   .fa.ml3
                     pre
@@ -160,9 +175,9 @@ html(lang="en")
 
         section
           .fcn
-            .fa.fc.pa1.h4
+            .fa.fc.pa1.h-top
               .dotcss
-            .fa.h4.fcn.mt2
+            .fa.h-top.fcn.pt2.h-bottom
               .fa.gold.b.fc.f2 Thank you
               a.fa.link.white.f3.fc(href='https://github.com/pixelastic/dotcss-onediv') github.com/pixelastic/dotcss-onediv
               .fa.frn.fc.f2

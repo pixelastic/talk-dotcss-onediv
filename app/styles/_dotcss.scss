@@ -114,22 +114,29 @@ $gol4:
   }
 }
 
-.dotcss-text-css {
+.dotcss-text-easy {
   &:before {
+    content: "dot";
+    text-align: center;
+    font-family: Arial;
+    font-size: $dot-font-size;
+    line-height: $dot-size;
+    color: black;
+  }
+  &:after {
     content: "CSS";
     font-family: Museo;
     font-size: $css-font-size;
+    height: $dot-size;
     line-height: $dot-size;
-    color: transparent;
-    text-shadow: ($dot-size + 15px) 0px 0px $white;
-  }
-  &.visible:before {
-    color: rgba(0,255,255,.4);
+    position: absolute;
+    top: $dot-top;
+    left: $dot-size + $dot-left + 15px;
   }
 }
 
-.dotcss-text-dotcss {
-  overflow: hidden;
+.dotcss-text-hard {
+  // overflow: hidden;
   &:before {
     font-family: Museo;
     font-size: $css-font-size;
@@ -142,6 +149,7 @@ $gol4:
     $offset-top: -$dot-size;
     color: transparent;
     text-shadow: ($offset-left) ($offset-top) 0px $white;
+    line-height: $dot-size;
   }
   &.visible:before {
     color: rgba(0,255,255,.4);
@@ -151,6 +159,7 @@ $gol4:
     font-size: $dot-font-size;
     line-height: $dot-size;
     color: black;
+    text-shadow: none;
   }
 }
 
@@ -160,5 +169,5 @@ $gol4:
   @extend .dotcss-main-circle;
   @extend .dotcss-background-circles;
   @extend .dotcss-gol;
-  @extend .dotcss-text-dotcss;
+  @extend .dotcss-text-hard;
 }
