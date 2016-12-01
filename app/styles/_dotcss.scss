@@ -150,6 +150,7 @@ $gol4:
     color: transparent;
     text-shadow: ($offset-left) ($offset-top) 0px $white;
     line-height: $dot-size;
+    transform: translateZ(0);
   }
   &.visible:before {
     color: rgba(0,255,255,.4);
